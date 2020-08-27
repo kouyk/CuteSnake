@@ -33,7 +33,8 @@ FORMS += \
     mainwindow.ui
 
 TRANSLATIONS += \
-    MySnakeGame_en_SG.ts
+    MySnakeGame_en.ts \
+    MySnakeGame_zh.ts
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
