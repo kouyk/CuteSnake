@@ -333,7 +333,7 @@ void GameArea::saveGame()
             return;
         }
         QTextStream out(&file);
-        out << *snake << *fruit << snake_dir << '\n';
+        out << *snake << snake_dir << ' ' << dir_lock << '\n' << *fruit << '\n';
         out << walls.size() << '\n';
         for (const auto &p : walls) {
             out << p.x() << ' ' << p.y() << '\n';
@@ -364,10 +364,10 @@ void GameArea::loadGame()
             return;
         }
         QTextStream in(&file);
-        in >> *snake >> *fruit;
-        int t_dir;
-        in >> t_dir;
+        int t_dir, d_lock;
+        in >> *snake  >> t_dir >> d_lock >> *fruit;
         snake_dir = static_cast<Direction>(t_dir);
+        dir_lock = static_cast<bool>(d_lock);
         snake_head = snake->getBody().front();
 
         walls.clear();
