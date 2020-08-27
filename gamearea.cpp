@@ -27,6 +27,7 @@ void GameArea::paintEvent(QPaintEvent *event)
     int &block_size = (w_size > h_size) ? h_size : w_size;
 
     auto drawSqr = [&](const QPoint &qp) { p.drawRect(qp.x(), qp.y(), 1, 1); };
+    auto drawCir = [&](const QPoint &qp) { p.drawEllipse(qp.x(), qp.y(), 1, 1);};
 
     p.translate((width() - block_size * grid_width) / 2,
                 (height() - block_size * grid_height) / 2);
@@ -64,7 +65,7 @@ void GameArea::paintEvent(QPaintEvent *event)
     // draw fruit
     p.setBrush(Qt::red);
     if (m_state != RESET) {
-        drawSqr(fruit->getPos());
+        drawCir(fruit->getPos());
     }
 }
 
