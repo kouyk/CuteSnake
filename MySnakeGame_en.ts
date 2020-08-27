@@ -4,24 +4,34 @@
 <context>
     <name>GameArea</name>
     <message>
-        <location filename="gamearea.cpp" line="312"/>
+        <location filename="gamearea.cpp" line="223"/>
+        <source>Oops</source>
+        <translation>Uh oh</translation>
+    </message>
+    <message>
+        <location filename="gamearea.cpp" line="223"/>
+        <source>Game Over!</source>
+        <translation>Game Over!</translation>
+    </message>
+    <message>
+        <location filename="gamearea.cpp" line="314"/>
         <source>Save Game State</source>
         <translation>Save Game State</translation>
     </message>
     <message>
-        <location filename="gamearea.cpp" line="314"/>
-        <location filename="gamearea.cpp" line="352"/>
+        <location filename="gamearea.cpp" line="316"/>
+        <location filename="gamearea.cpp" line="354"/>
         <source>Game Save (*.gs);;All Files (*)</source>
         <translation>Game Save (*.gs);;All Files (*)</translation>
     </message>
     <message>
-        <location filename="gamearea.cpp" line="330"/>
-        <location filename="gamearea.cpp" line="361"/>
+        <location filename="gamearea.cpp" line="332"/>
+        <location filename="gamearea.cpp" line="363"/>
         <source>Unable to open file</source>
         <translation>Unable to open file</translation>
     </message>
     <message>
-        <location filename="gamearea.cpp" line="350"/>
+        <location filename="gamearea.cpp" line="352"/>
         <source>Load Game State</source>
         <translation>Load Game State</translation>
     </message>

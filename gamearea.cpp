@@ -220,6 +220,7 @@ void GameArea::stop_game()
     m_state = STOPPED;
     snake->backtrack();
     snake_head = snake->getBody().front();
+    QMessageBox::information(this, tr("Oops"), tr("Game Over!"));
     emit gameEnded();
 }
 

@@ -4,24 +4,34 @@
 <context>
     <name>GameArea</name>
     <message>
-        <location filename="gamearea.cpp" line="312"/>
+        <location filename="gamearea.cpp" line="223"/>
+        <source>Oops</source>
+        <translation>糟了</translation>
+    </message>
+    <message>
+        <location filename="gamearea.cpp" line="223"/>
+        <source>Game Over!</source>
+        <translation>游戏结束！</translation>
+    </message>
+    <message>
+        <location filename="gamearea.cpp" line="314"/>
         <source>Save Game State</source>
         <translation>保存游戏状态</translation>
     </message>
     <message>
-        <location filename="gamearea.cpp" line="314"/>
-        <location filename="gamearea.cpp" line="352"/>
+        <location filename="gamearea.cpp" line="316"/>
+        <location filename="gamearea.cpp" line="354"/>
         <source>Game Save (*.gs);;All Files (*)</source>
         <translation>游戏存档(*.gs);;所有文件(*)</translation>
     </message>
     <message>
-        <location filename="gamearea.cpp" line="330"/>
-        <location filename="gamearea.cpp" line="361"/>
+        <location filename="gamearea.cpp" line="332"/>
+        <location filename="gamearea.cpp" line="363"/>
         <source>Unable to open file</source>
         <translation>无法打开文件</translation>
     </message>
     <message>
-        <location filename="gamearea.cpp" line="350"/>
+        <location filename="gamearea.cpp" line="352"/>
         <source>Load Game State</source>
         <translation>载入游戏</translation>
     </message>
