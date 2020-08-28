@@ -116,7 +116,6 @@ void GameArea::timerEvent(QTimerEvent *event)
 }
 
 void GameArea::keyPressEvent(QKeyEvent *event) {
-//    qDebug() << "GameArea keypress:" << event->key();
     switch (event->key()) {
     case Qt::Key_Up:
     case Qt::Key_W:
@@ -208,7 +207,7 @@ void GameArea::start_game()
         make_fruit();
     }
     m_state = PLAYING;
-    timerId = startTimer(delay);
+    timerId = (steps > 0) ? startTimer(delay) : -1;
     setFocus();
     update();
     emit gameResumed();
@@ -269,6 +268,10 @@ void GameArea::set_direction(const Direction &dir)
     if (snake_dir != dir && snake_dir != (DOWN - dir)) {
         snake_dir = dir;
         dir_lock = true;
+    }
+
+    if (timerId == -1) {
+        timerId = startTimer(delay);
     }
 }
 
