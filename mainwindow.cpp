@@ -6,6 +6,7 @@
 #include <QMessageBox>
 #include <QAction>
 #include <QLCDNumber>
+#include <QStyle>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -75,37 +76,41 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 
 void MainWindow::createActions()
 {
-    openAct = new QAction(tr("&Load..."), this);
+    auto useIcon = [](QStyle::StandardPixmap sp) {
+        return QApplication::style()->standardIcon(sp);
+    };
+
+    openAct = new QAction(useIcon(QStyle::SP_DialogOpenButton), tr("&Load..."), this);
     openAct->setShortcuts(QKeySequence::Open);
     openAct->setStatusTip(tr("Open a saved game"));
     connect(openAct, SIGNAL(triggered()), gamearea, SLOT(loadGame()));
 
-    saveAct = new QAction(tr("&Save..."), this);
+    saveAct = new QAction(useIcon(QStyle::SP_DialogSaveButton), tr("&Save..."), this);
     saveAct->setShortcuts(QKeySequence::Save);
     saveAct->setStatusTip(tr("Save the current game state to disk"));
     saveAct->setEnabled(false);
     connect(saveAct, SIGNAL(triggered()), gamearea, SLOT(saveGame()));
 
-    exitAct = new QAction(tr("&Exit"), this);
+    exitAct = new QAction(useIcon(QStyle::SP_DialogCloseButton), tr("&Exit"), this);
     exitAct->setShortcuts(QKeySequence::Quit);
     exitAct->setStatusTip(tr("Exit the application"));
     connect(exitAct, &QAction::triggered, this, &QWidget::close);
 
-    startAct = new QAction(tr("Start"), this);
+    startAct = new QAction(useIcon(QStyle::SP_MediaPlay), tr("Start"), this);
     startAct->setStatusTip(tr("Begin the game"));
     connect(startAct, SIGNAL(triggered()), gamearea, SLOT(startGame()));
 
-    pauseAct = new QAction(tr("Pause"), this);
+    pauseAct = new QAction(useIcon(QStyle::SP_MediaPause), tr("Pause"), this);
     pauseAct->setStatusTip(tr("Pause the game"));
     pauseAct->setEnabled(false);
     connect(pauseAct, SIGNAL(triggered()), gamearea, SLOT(pauseGame()));
 
-    resumeAct = new QAction(tr("Resume"), this);
+    resumeAct = new QAction(useIcon(QStyle::SP_MediaSeekForward), tr("Resume"), this);
     resumeAct->setStatusTip(tr("Continue the game"));
     resumeAct->setEnabled(false);
     connect(resumeAct, SIGNAL(triggered()), gamearea, SLOT(resumeGame()));
 
-    resetAct = new QAction(tr("&Reset"), this);
+    resetAct = new QAction(useIcon(QStyle::SP_DialogResetButton), tr("&Reset"), this);
     resetAct->setStatusTip(tr("Reset the game and restore to default state"));
     resetAct->setEnabled(false);
     connect(resetAct, SIGNAL(triggered()), gamearea, SLOT(resetGame()));
